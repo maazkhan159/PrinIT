@@ -76,8 +76,9 @@
                         <div class="code text-center">{{$data->code}}</div>
                         <div class="return-address text-center">
                             <strong>If undeliverd,return to:</strong>
-                            <p>Arfa Software Technology Park (Technology park in Lahore, Pakistan)
-                                346-B Lahore–Kasur Rd, Lahore
+                            <p>
+                                {{$address->address}}   {{$address->city}}  {{$address->state}}  {{$address->country}}  {{$address->postal_code}}
+
                             </p>
                         </div>
                     </div>
