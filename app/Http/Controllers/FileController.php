@@ -1,0 +1,31 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Address;
+use App\Files;
+use Illuminate\Http\Request;
+
+use App\Http\Requests;
+use Illuminate\Support\Facades\Auth;
+
+class FileController extends Controller
+{
+    private $user_id ;
+
+    public function __construct()
+    {
+        $this->user_id = Auth::user()->id;
+    }
+
+    public function getFiles(){
+        $addresses = Address::where('user_id',$this->user_id)->get();
+        $files = Files::where('user_id', $this->user_id)->orderBy('id', 'desc')->get();
+        return view('panel/user_dashboard')->with(compact('files'))->with(compact('addresses'));
+    }
+    public function deleteFile($id){
+        $files = Files::destroy($id);
+
+       return redirect()->back();
+    }
+}
