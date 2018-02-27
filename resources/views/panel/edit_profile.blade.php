@@ -46,11 +46,14 @@
                             <div class="widget radius-bordered">
 
                                 <div class="widget-body">
-                                    <form id="registrationForm" method="post" class="form-horizontal"
+                                    <form id="registrationForm" method="post" action="{{url('user/edit')}}"
+                                          accept-charset="utf-8" enctype="multipart/form-data"
+                                          class="form-horizontal"
                                           data-bv-message="This value is not valid"
                                           data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
                                           data-bv-feedbackicons-invalid="glyphicon glyphicon-remove"
                                           data-bv-feedbackicons-validating="glyphicon glyphicon-refresh">
+                                        {{ method_field('PATCH') }}
                                         <div class="form-title">
                                             Edit Profile
                                         </div>
@@ -58,90 +61,22 @@
                                         <div class="form-group">
                                             <label class="col-lg-4 control-label">Email</label>
                                             <div class="col-lg-4">
-                                                <input type="text" class="form-control" name="username"
-                                                       data-bv-message="The username is not valid"
-                                                       data-bv-notempty="true"
-                                                       data-bv-notempty-message="The username is required and cannot be empty"
-                                                       data-bv-regexp="true"
-                                                       data-bv-regexp-regexp="[a-zA-Z0-9_\.]+"
-                                                       data-bv-regexp-message="The username can only consist of alphabetical, number, dot and underscore"
-                                                       data-bv-stringlength="true"
-                                                       data-bv-stringlength-min="6"
-                                                       data-bv-stringlength-max="30"
-                                                       data-bv-stringlength-message="The username must be more than 6 and less than 30 characters long"
-                                                       data-bv-different="true"
-                                                       data-bv-different-field="password"
-                                                       data-bv-different-message="The username and password cannot be the same as each other"/>
+                                                <input type="text" class="form-control" value="{{$user->email}}" readonly/>
                                             </div>
                                         </div>
-                                        <!-- <div class="form-group">
-                                            <label class="col-lg-4 control-label">Country Name</label>
-                                            <div class="col-lg-4">
-                                                <div>
 
-                                    <select id="e1" style="width:100%;">
-                                        <option Value="">Select Project Name
-                                        <option value="HR" />HRIS
-                                        <option value="IA" />IASB
-                                        <option value="HR" />HRS
-                                        <option value="PM" />PPRMP
-                                        <option value="ND" />NDP
-                                        <option value="CO" />Colorado
-                                        <option value="CT" />Connecticut
-                                        <option value="DE" />Delaware
-                                        <option value="FL" />Florida</option>
-
-                                    </select>
-                                            </div>
-                                        </div></div>
-
-                                         <div class="form-group">
-                                            <label class="col-lg-4 control-label">City Name</label>
-                                            <div class="col-lg-4">
-                                                <div>
-
-                                    <select id="e1" style="width:100%;">
-                                        <option Value="">Select Project Name
-                                        <option value="HR" />HRIS
-                                        <option value="IA" />IASB
-                                        <option value="HR" />HRS
-                                        <option value="PM" />PPRMP
-                                        <option value="ND" />NDP
-                                        <option value="CO" />Colorado
-                                        <option value="CT" />Connecticut
-                                        <option value="DE" />Delaware
-                                        <option value="FL" />Florida</option>
-
-                                    </select>
-                                            </div>
-                                        </div></div> -->
                                         <div class="form-group">
                                             <label class="col-lg-4 control-label">Name</label>
                                             <div class="col-lg-4">
-                                                <input type="text" class="form-control" name="username"
-                                                       data-bv-message="The username is not valid"
-                                                       data-bv-notempty="true"
-                                                       data-bv-notempty-message="The username is required and cannot be empty"
-                                                       data-bv-regexp="true"
-                                                       data-bv-regexp-regexp="[a-zA-Z0-9_\.]+"
-                                                       data-bv-regexp-message="The username can only consist of alphabetical, number, dot and underscore"
-                                                       data-bv-stringlength="true"
-                                                       data-bv-stringlength-min="6"
-                                                       data-bv-stringlength-max="30"
-                                                       data-bv-stringlength-message="The username must be more than 6 and less than 30 characters long"
-                                                       data-bv-different="true"
-                                                       data-bv-different-field="password"
-                                                       data-bv-different-message="The username and password cannot be the same as each other"/>
-                                            </div>
+                                                <input type="text" class="form-control" value="{{$user->name}}" name="name"/>
+                                               </div>
                                         </div>
 
 
                                         <div class="form-group">
                                             <label class="col-lg-4 control-label">Contact No.</label>
                                             <div class="col-lg-4">
-                                                <input class="form-control" name="email" type="email"
-                                                       data-bv-emailaddress="true"
-                                                       data-bv-emailaddress-message="The input is not a valid email address"/>
+                                                <input type="text" class="form-control" value="{{$user->contact_no}}" name="contact_no"/>
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -149,13 +84,24 @@
                                             <div class="col-lg-4">
                                                 <div>
 
-                                                    <select id="e1" style="width:100%;">
-                                                        <option Value="">Select Project Name
-                                                        <option value="HR"/>
-                                                        Male
-                                                        <option value="IA"/>
-                                                        Female
+                                                    <select id="e1" style="width:100%;" name="gender">
+                                                        @if($user->gender == "gender")
+                                                            <option value="gender" selected="selected">Gender
 
+                                                        @else
+                                                            <option value="gender">Gender
+
+                                                        @endif
+                                                            @if($user->gender == "1")
+                                                        <option value="1" selected="selected"/>Male
+                                                            @else
+                                                                <option value="1"/>Male
+                                                            @endif
+                                                            @if($user->gender == "0")
+                                                        <option value="0"  selected="selected"/>Female
+                                                            @else
+                                                                <option value="0"/>Female
+                                                            @endif
 
                                                     </select>
                                                 </div>
@@ -163,41 +109,13 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label class="col-lg-4 control-label">Password</label>
+                                            <label class="col-lg-4 control-label">Profile Image</label>
                                             <div class="col-lg-4">
-                                                <input type="password" class="form-control" name="password"
-                                                       data-bv-notempty="true"
-                                                       data-bv-notempty-message="The password is required and cannot be empty"
-                                                       data-bv-identical="true"
-                                                       data-bv-identical-field="confirmPassword"
-                                                       data-bv-identical-message="The password and its confirm are not the same"
-                                                       data-bv-different="true"
-                                                       data-bv-different-field="username"
-                                                       data-bv-different-message="The password cannot be the same as username"/>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label class="col-lg-4 control-label">Retype password</label>
-                                            <div class="col-lg-4">
-                                                <input type="password" class="form-control" name="confirmPassword"
-                                                       data-bv-notempty="true"
-                                                       data-bv-notempty-message="The confirm password is required and cannot be empty"
-                                                       data-bv-identical="true"
-                                                       data-bv-identical-field="password"
-                                                       data-bv-identical-message="The password and its confirm are not the same"
-                                                       data-bv-different="true"
-                                                       data-bv-different-field="username"
-                                                       data-bv-different-message="The password cannot be the same as username"/>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-lg-4 control-label">Edit Image</label>
-                                            <div class="col-lg-4">
-                                                <input name="fileToUpload" id="fileToUpload"
+                                                <input name="profile_image" id="fileToUpload2"
                                                        data-bv-field="fileToUpload" type="file">
 
                                             </div>
+
                                         </div>
                                         <div class="form-group">
                                             <div class="col-lg-offset-4 col-lg-8">

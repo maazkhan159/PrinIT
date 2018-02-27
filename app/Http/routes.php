@@ -26,15 +26,12 @@ Route::group([ 'middleware' => 'auth'], function()
     Route::post('/save_address','AddressController@saveAddress');
     Route::get('/add_information','AddressController@index');
     Route::get('/delete/address/{id}','AddressController@deleteAddress');
-    Route::get('/edit_profile' , function () {
-        return view('panel/edit_profile');
-    });
+    Route::get('/edit_profile' ,'UserController@index');
+    Route::patch('user/edit','UserController@update');
     Route::get('/change_password' , function () {
         return view('panel/change_password');
     });
-    Route::get('/change_password2' , function () {
-        return view('panel/change_password');
-    });
+
 
 });
 Route::get('/about', function (){
