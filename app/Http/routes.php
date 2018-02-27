@@ -32,6 +32,9 @@ Route::group([ 'middleware' => 'auth'], function()
     Route::get('/change_password' , function () {
         return view('panel/change_password');
     });
+    Route::get('/change_password2' , function () {
+        return view('panel/change_password');
+    });
 
 });
 Route::get('/about', function (){
