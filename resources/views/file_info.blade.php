@@ -60,9 +60,9 @@
     <div class="row">
         @foreach ($file_info as $data)
             <div>
-            <div class="margin-top-20"  style="float: left; width: 47% ;margin-left: 10px">
+            <div class=""  style="float: left; width: 47% ;margin-left: 10px ;margin-top:25px">
                 <div class="row"  style="height: 230px">
-                    <div class="col-sm-4" style="float: left; width: 32%; margin-left: 25px">
+                    <div class="col-sm-4" style="float: left; width: 32%; margin-left: 25px;margin-top: 20px">
                         <p class="name">  {{$data->name}}</p>
                         <address>
                             {{$data->address}}

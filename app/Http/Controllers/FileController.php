@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Address;
+use App\FileInfo;
 use App\Files;
 use Illuminate\Http\Request;
 
@@ -26,6 +27,7 @@ class FileController extends Controller
     public function deleteFile($id)
     {
         $files = Files::destroy($id);
+        FileInfo::where('file_id',$id)->delete();
 
         return redirect()->back()->with('status', 'File has been deleted successfully!');
            }
