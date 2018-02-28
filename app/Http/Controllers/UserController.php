@@ -23,10 +23,8 @@ class UserController extends Controller
     }
     public  function update(Request $request){
         $input = $request->all();
-
-        $file = $input['profile_image'];
-        if($file) {
-
+        if($request->has('profile_image')) {
+            $file = $input['profile_image'];
 
             $filename = time() . '.' . $file->getClientOriginalName();
             $file->move(public_path('/user_profile_image'), $filename);
