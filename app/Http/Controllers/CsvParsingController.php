@@ -16,14 +16,19 @@ class CsvParsingController extends Controller
     public function saveFile(Request $request)
     {
         $input = $request->all();
-        $file = $input['file'];
-        $filename = time().'.'.$file->getClientOriginalName();
-        $file->move(public_path('/uploadedCsv'), $filename);
-        $path = public_path('/uploadedCsv/').$filename;
-        $data  = $this->parsing($path);
-        $file_inserted_id = $this->saveFileNameInDB($filename);
-        $this->saveFileInfo($data,$file_inserted_id);
-        return redirect('user_dashboard')->with('status', 'File has been added successfully!');
+        if(array_key_exists('file', $input)) {
+            $file = $input['file'];
+            $filename = time() . '.' . $file->getClientOriginalName();
+            $file->move(public_path('/uploadedCsv'), $filename);
+            $path = public_path('/uploadedCsv/') . $filename;
+            $data = $this->parsing($path);
+            $file_inserted_id = $this->saveFileNameInDB($filename);
+            $this->saveFileInfo($data, $file_inserted_id);
+            return redirect('user_dashboard')->with('status', 'File has been added successfully!');
+        }
+        else {
+            return redirect()->back()->with('error', 'File is missing!');
+        }
 
 
 

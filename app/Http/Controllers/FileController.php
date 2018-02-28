@@ -23,9 +23,10 @@ class FileController extends Controller
         $files = Files::where('user_id', $this->user_id)->orderBy('id', 'desc')->get();
         return view('panel/user_dashboard')->with(compact('files'))->with(compact('addresses'));
     }
-    public function deleteFile($id){
+    public function deleteFile($id)
+    {
         $files = Files::destroy($id);
 
-       return redirect()->back();
-    }
+        return redirect()->back()->with('status', 'File has been deleted successfully!');
+           }
 }

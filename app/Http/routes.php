@@ -28,6 +28,7 @@ Route::group([ 'middleware' => 'auth'], function()
     Route::get('/delete/address/{id}','AddressController@deleteAddress');
     Route::get('/edit_profile' ,'UserController@index');
     Route::patch('user/edit','UserController@update');
+    Route::patch('user/reset_password','UserController@resetPassword');
     Route::get('/change_password' , function () {
         return view('panel/change_password');
     });
