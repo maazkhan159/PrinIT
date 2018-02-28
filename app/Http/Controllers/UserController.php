@@ -24,10 +24,9 @@ class UserController extends Controller
     public  function update(Request $request){
         $input = $request->all();
 
-        $file = $input['profile_image'];
-        if($file) {
+        if(array_key_exists('profile_image', $input)) {
 
-
+            $file = $input['profile_image'];
             $filename = time() . '.' . $file->getClientOriginalName();
             $file->move(public_path('/user_profile_image'), $filename);
             $path = '/user_profile_image/' . $filename;
@@ -40,5 +39,14 @@ class UserController extends Controller
 
 
 
+    }
+    public  function resetPassword(Request $request){
+
+        $this->validate($request,[
+            'password' => 'required|min:6|confirmed',
+        ]);
+
+        User::where('id',$this->user_id)->update(['password' =>  bcrypt($request->all()['password'])]);
+        return redirect()->back();
     }
 }

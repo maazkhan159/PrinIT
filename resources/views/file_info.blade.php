@@ -71,7 +71,8 @@
                     </div>
                     <div class="" style="float: left; width: 57%; margin-left: 1px">
                         <div class="text-center">  {{$data->date}}</div>
-                        <img src="{{ URL::to('/assets/images/download.png') }}" alt="log">
+
+                        <img src="{{URL::to ($address->logo)}}" alt="logo" class="img-responsive img-thumbnail">
                         <div class="type text-center">  {{$data->type_of_shipment}}</div>
                         <div class="code text-center">{{$data->code}}</div>
                         <div class="return-address text-center">
