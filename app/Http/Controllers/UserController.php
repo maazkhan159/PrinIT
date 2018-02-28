@@ -35,7 +35,7 @@ class UserController extends Controller
         }
         array_shift($input);
         User::where('id',$this->user_id)->update($input);
-       return redirect()->back();
+       return redirect()->back()->with('status', 'Profile image has been updated successfully!');;
 
 
 
@@ -47,6 +47,6 @@ class UserController extends Controller
         ]);
 
         User::where('id',$this->user_id)->update(['password' =>  bcrypt($request->all()['password'])]);
-        return redirect()->back();
+        return redirect()->back()->with('status', 'Your password has been updated sucessfully!');
     }
 }

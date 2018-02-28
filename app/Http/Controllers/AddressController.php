@@ -25,20 +25,32 @@ class AddressController extends Controller
     public  function saveAddress(Request $request){
         $input = $request->all();
 
-//        save file in server and get saved path
-        $file = $input['logo'];
+        $this->validate($request,[
+            'address' => 'required',
+            'country' => 'required',
+            'postal_code' => 'required',
+            'city' => 'required',
+            'state' => 'required',
+            'logo' => 'required',
+        ]);
 
-        $filename = time().'.'.$file->getClientOriginalName();
-        $file->move(public_path('/user_logo'), $filename);
-        $path = '/user_logo/'.$filename;
-        // assign logo path
-        $input['logo'] = $path;
+        if(array_key_exists('logo', $input)) {
+
+
+//        save file in server and get saved path
+            $file = $input['logo'];
+
+            $filename = time() . '.' . $file->getClientOriginalName();
+            $file->move(public_path('/user_logo'), $filename);
+            $path = '/user_logo/' . $filename;
+            // assign logo path
+            $input['logo'] = $path;
+        }
         $input['user_id'] = $this->user_id;
         // now saving in db
 
         Address::create($input);
-        return redirect()->back();
-
+        return redirect()->back()->with('status', 'Your Return adress has been sucessfully added!');
 
 
     }
@@ -53,6 +65,6 @@ class AddressController extends Controller
         Address::destroy($id);
        $path = public_path($address->logo);
       //  File::delete($path);
-        return redirect()->back();
+        return redirect()->back()->with('status', 'Your file has been deleated sucessfully!');
     }
 }

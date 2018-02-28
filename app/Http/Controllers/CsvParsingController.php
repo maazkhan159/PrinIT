@@ -35,7 +35,14 @@ class CsvParsingController extends Controller
     }
     private  function parsing($path){
         $data = Excel::load($path, function($reader) {})->toArray();
-        return $data;
+        $parsed_data = [];
+        foreach ($data as $value){
+            if(array_key_exists('address',$value)){
+                array_push($parsed_data,$value);
+            }
+        }
+
+        return $parsed_data;
 
     }
     private  function saveFileNameInDB($fileName){

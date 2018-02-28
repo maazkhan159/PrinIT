@@ -40,6 +40,21 @@
         <!-- /Page Header -->
         <!-- Page Body -->
         <div class="page-body">
+            @if (session('status'))
+                <div class="alert alert-success alert-dismissable">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <strong>Success!</strong>{{ session('status') }}
+                </div>
+
+            @endif
+            @if (session('error'))
+                <div class="alert alert-danger alert-dismissable">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <strong>Error!</strong>{{ session('error') }}
+                </div>
+
+            @endif
+
             <div class="row">
                 <div class="col-lg-12 col-sm-12 col-xs-12">
                     <div class="row">
