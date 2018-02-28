@@ -72,7 +72,11 @@
                         <li>
                             <a class="login-area dropdown-toggle" data-toggle="dropdown">
                                 <div class="avatar" title="View your public profile">
+                                    @if(Auth::user()->profile_image)
+                                        <img src="{{URL::to (Auth::user()->profile_image)}}">
+                                    @else
                                     <img src="{{URL::to ('assets/images/avatars/adam-jansen.jpg')}}">
+                                    @endif
                                 </div>
                                 <section>
                                     <h2><span class="profile"><span>{{Auth::user()->name}}</span></span></h2>
@@ -82,11 +86,17 @@
                             <ul class="pull-right dropdown-menu dropdown-arrow dropdown-login-area" style="width: 140%;">
                                 <li class="username"><a>{{Auth::user()->name}}</a></li>
                                 <li class="email"><a style="color: #5db2ff">{{Auth::user()->email}}</a></li>
-                                <li class="email" style="color: #5db2ff">{{Auth::user()->contactno}}</li>
+                                <li class="email" style="color: #5db2ff">{{Auth::user()->contact_no}}</li>
                                 <!--Avatar Area-->
                                 <li>
                                     <div class="avatar-area">
-                                        <img src="{{URL::to ('assets/images/avatars/adam-jansen.jpg')}}" class="avatar">
+                                        @if(Auth::user()->profile_image)
+                                            <img src="{{URL::to (Auth::user()->profile_image)}}" class="avatar">
+                                        @else
+                                            <img src="{{URL::to ('assets/images/avatars/adam-jansen.jpg')}}" class="avatar">
+                                        @endif
+
+
 
                                     </div>
                                 </li>
@@ -96,7 +106,7 @@
 
                                 <!--/Theme Selector Area-->
                                 <li class="dropdown-footer">
-                                    <a href="#" style="color: #5db2ff">
+                                    <a href="{{ url('/logout') }}" style="color: #5db2ff">
                                         Sign out
                                     </a>
                                 </li>
@@ -154,8 +164,8 @@
                         <span class="menu-text">Change Password</span>
                     </a>
                 </li>
-                <li class="{{ Request::is('') ? 'active' : '' }}">
-                    <a href="#">
+                <li class="{{ Request::is('logout') ? 'active' : '' }}">
+                    <a href="{{ url('/logout') }}">
                         <i class="menu-icon fa fa-sign-out"></i>
                         <span class="menu-text">Logout</span>
                     </a>

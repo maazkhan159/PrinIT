@@ -30,7 +30,7 @@
         <div class="header">
 
             <div class="logo">
-                <h1><a href="index.html"><span>B</span>usiness<label>Field</label></a></h1>
+                <h1><a href="{{url('/')}}"><span>B</span>usiness<label>Field</label></a></h1>
             </div>
             <div class="clearfix"> </div>
         </div>

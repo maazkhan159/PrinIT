@@ -90,9 +90,17 @@
       <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="34" column="33" lean-forward="false" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
-              <folding />
+            <state relative-caret-position="374">
+              <caret line="31" column="33" lean-forward="false" selection-start-line="31" selection-start-column="33" selection-end-line="31" selection-end-column="33" />
+              <folding>
+                <marker date="1519807177440" expanded="true" signature="485:1246" ph="..." />
+                <marker date="1519807177440" expanded="true" signature="522:1246" ph="{...}" />
+                <marker date="1519807177440" expanded="true" signature="1042:1059" ph="..." />
+                <marker date="1519807177440" expanded="true" signature="1260:1310" ph="..." />
+                <marker date="1519807177440" expanded="true" signature="1282:1309" ph="..." />
+                <marker date="1519807177440" expanded="true" signature="1324:1378" ph="..." />
+                <marker date="1519807177440" expanded="true" signature="1348:1377" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -224,7 +232,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="-8" />
     <option name="width" value="1378" />
     <option name="height" value="744" />
@@ -334,15 +342,15 @@
       <workItem from="1519201481318" duration="655000" />
       <workItem from="1519385794017" duration="1682000" />
       <workItem from="1519635741489" duration="41630000" />
-      <workItem from="1519800500909" duration="1702000" />
+      <workItem from="1519800500909" duration="1980000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="76461000" />
+    <option name="totallyTimeSpent" value="76739000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="0" width="1378" height="744" extended-state="0" />
+    <frame x="-8" y="0" width="1378" height="744" extended-state="1" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.284522" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -689,9 +697,17 @@
     <entry file="file://$PROJECT_DIR$/resources/views/panel/logout.html" />
     <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="34" column="33" lean-forward="false" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
-          <folding />
+        <state relative-caret-position="374">
+          <caret line="31" column="33" lean-forward="false" selection-start-line="31" selection-start-column="33" selection-end-line="31" selection-end-column="33" />
+          <folding>
+            <marker date="1519807177440" expanded="true" signature="485:1246" ph="..." />
+            <marker date="1519807177440" expanded="true" signature="522:1246" ph="{...}" />
+            <marker date="1519807177440" expanded="true" signature="1042:1059" ph="..." />
+            <marker date="1519807177440" expanded="true" signature="1260:1310" ph="..." />
+            <marker date="1519807177440" expanded="true" signature="1282:1309" ph="..." />
+            <marker date="1519807177440" expanded="true" signature="1324:1378" ph="..." />
+            <marker date="1519807177440" expanded="true" signature="1348:1377" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
