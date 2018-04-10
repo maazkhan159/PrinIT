@@ -5,38 +5,47 @@
 
     <style>
         address {
-            font-weight: bolder;
+            font-weight: bold;
+            width: 110px;
         }
 
         .file .date {
-            font-size: larger
+            font-size: small;
+
         }
 
         .file .name {
-            font-size: larger
+            font-size: small;
+             font-weight: bolder;
+            width: 50px;
+        }
+        .file .baddress{
+            font-size: small;
+            width: 110px;
+            height: 10px;
         }
 
         .file img {
             border: 1px solid;
-            width: 100%;
-            height: 150px;
+            width: 150px;
+            height: 67px;
             padding: 5px;
+            margin-bottom: 5px;
         }
 
         .file .type, .file .code {
-            width: 100%;
+            width: 200px;
             border: 1px solid;
-            font-size: larger
+            font-size:small;
+            margin-bottom: 5px;
         }
 
         .file .return-address {
-            width: 100%;
+            width: 200px;
             border: 1px solid;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
         }
-        .margin-top-20{
-            margin-top: 20px;
-        }
+
         .row {
 
             margin-right: -15px;
@@ -46,7 +55,7 @@
             text-align: center;
         }
         .container{
-            padding: 15px;
+            padding: 01px;
         }
 
 
@@ -60,28 +69,30 @@
     <div class="row">
         @foreach ($file_info as $data)
             <div>
-            <div class=""  style="float: left; width: 47% ;margin-left: 10px ;margin-top:25px">
+            <div class=""  style="float: left; width: 47% ;margin-left: 10px ;margin-top:0px">
                 <div class="row"  style="height: 230px">
-                    <div class="col-sm-4" style="float: left; width: 32%; margin-left: 25px;margin-top: 20px">
-                        <p class="name">  {{$data->name}}</p>
-                        <address>
-                            {{$data->address}}
+                    <div class="col-sm-4" style="float: left; width: 32%; margin-left: 25px;margin-top: 15px">
+                        <p class="name" style="width: 50px">  {{$data['name']}}</p>
+                        <address  >
+                            {{$data['address'].' '.$data['state'].' '.$data['city'].' '.$data['country'].' '.$data['postal']}}
                         </address>
-                        <p class="name">  {{$data->quantity}} /  {{$data->product_name}}</p>
+                        <p class="baddress">  {{$data['quantity']}} /  {{$data['product_name']}}</p>
                     </div>
-                    <div class="" style="float: left; width: 57%; margin-left: 1px">
-                        <div class="text-center">  {{$data->date}}</div>
+                    <div class="" style="float: left; width: 35%; margin-left: 1px">
+                        <div class="text-center">  {{$data['date']}}</div>
 
                         <img src="{{URL::to ($address->logo)}}" alt="logo" class="img-responsive img-thumbnail">
-                        <div class="type text-center">  {{$data->type_of_shipment}}</div>
-                        <div class="code text-center">{{$data->code}}</div>
+                        <div class="type text-center">  {{$data['type_of_shipment']}}</div>
+                        <div class="code text-center">{{$data['code']}}</div>
                         <div class="return-address text-center">
                             <strong>If undeliverd,return to:</strong>
                             <p>
                                 {{$address->address}}   {{$address->city}}  {{$address->state}}  {{$address->country}}  {{$address->postal_code}}
 
                             </p>
+
                         </div>
+                        <p>www.haider&maaz.com</p>
                     </div>
                 </div>
             </div>

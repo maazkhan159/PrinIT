@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>PrintIT</title>
+    <title>Easy Label Printing</title>
     {{--<link rel="stylesheet" href="{{ URL::to('/assets/css/bootstrap.css') }}">--}}
     <meta name="description" content="Dashboard" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -21,7 +21,7 @@
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
     <!--Beyond styles-->
-    <link id="beyond-link" href="{{URL::to ('/assets/css/beyond.min.css')}}" rel="stylesheet" type="text/css" />
+    <link  href="{{URL::to ('/assets/css/beyond.min.css')}}" rel="stylesheet" type="text/css" />
     <link href="{{URL::to ('/assets/css/demo.min.css')}}" rel="stylesheet" />
     <link href="{{URL::to ('/assets/css/typicons.min.css')}}" rel="stylesheet" />
     <link href="{{URL::to ('/assets/css/animate.min.css')}}" rel="stylesheet" />
@@ -145,6 +145,57 @@
                         <span class="menu-text"> Dashboard </span>
                     </a>
                 </li>
+                <!-- <li class="{{ Request::is('amazon') ? 'active' : '' }}">
+                    <a href="{{ url('amazon')}}">
+                        <i class="menu-icon glyphicon glyphicon-home"></i>
+                        <span class="menu-text"> Amazon </span>
+                    </a>
+                </li> -->
+            <li>
+        <a href="#" class="menu-dropdown open">
+            <i class="menu-icon fa fa-print"></i>
+            <span class="menu-text"> Print Label </span>
+
+            <i class="menu-expand"></i>
+        </a>
+
+        <ul class="submenu">
+            <li class="{{ Request::is('ebayfile') ? 'active' : '' }}" ><a href="{{ url('ebayfile')}}" title="EBay">
+                
+                    <span class="menu-text">Ebay</span>
+                </a>
+            </li>
+           
+             <li><a href="#" title="Amazon" class="menu-dropdown">
+                    <span class="menu-text">Amazon</span>
+                    <i class="menu-expand"></i>
+                </a>
+                <ul class="submenu">
+                    <li class="{{ Request::is('amazon') ? 'active' : '' }}"><a href="{{ url('amazon')}}" title="amazon csv">
+                        <span class="menu-text">Amazon Csv</span>
+                    </a>
+                        
+                    </li>
+                    <li><a  href="{{ url('amazontext')}}"  title="text file">
+                        <span class="menu-text">Amazon Text File</span>
+                    </a>
+                        
+                    </li>
+
+
+                </ul>
+            </li>
+            
+            <li class="{{ Request::is('simple') ? 'active' : '' }}"><a href="{{ url('simple')}}" title="Other Format">
+                
+                    <span class="menu-text">Other Formats</span>
+                </a>
+            </li>
+            
+        </ul>
+    </li>
+    
+
                 <!--Databoxes-->
                 <li class="{{ Request::is('add_information') ? 'active' : '' }}">
                     <a href="{{ url('add_information')}}">

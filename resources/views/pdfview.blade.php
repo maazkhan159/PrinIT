@@ -54,7 +54,7 @@
                             <div class="return-address text-center">
                                 <strong>If undeliverd,return to:</strong>
                                 <p>AEL@ *A Adswood Lane West,
-                                    Stockport. SK3 8HT Top Quality Products Superb Prices.
+                                    Stockport. SK3 8HT Top Quality Products .
                                 </p>
                             </div>
                         </div>

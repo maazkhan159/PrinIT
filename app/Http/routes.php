@@ -19,19 +19,27 @@ Route::auth();
 Route::group([ 'middleware' => 'auth'], function()
 {
     Route::get('/home', 'HomeController@index');
-    Route::post('/parsing', 'CsvParsingController@saveFile');
+    Route::post('/parsing/', 'CsvParsingController@saveFile');
     Route::get('/file/{id}','FileInfoController@getFileInfo');
     Route::get('/delete/file/{id}','FileController@deleteFile');
-    Route::get('/user_dashboard','FileController@getFiles');
+    Route::get('/user_dashboard','UserController@dashboard');
+    Route::get('/amazon','AmazonController@getFiles');
+    Route::get('/amazontext','AmazonController@getTextFiles');
+    Route::get('/simple','SimpleController@getFiles');
     Route::post('/save_address','AddressController@saveAddress');
     Route::get('/add_information','AddressController@index');
     Route::get('/delete/address/{id}','AddressController@deleteAddress');
     Route::get('/edit_profile' ,'UserController@index');
     Route::patch('user/edit','UserController@update');
+    Route::get('/ebayfile', 'EbayController@getFiles');
     Route::patch('user/reset_password','UserController@resetPassword');
     Route::get('/change_password' , function () {
         return view('panel/change_password');
     });
+    Route::get('/amazon_sample_download', 'DownloadFileController@getAmazonDownload');
+    Route::get('/ebay_stats/{file_id}', 'StatsController@getEbayStats');
+//    Route::get('/amazon_sample_download', 'DownloadFileController@getAmazonDownload');
+  //  Route::get('/amazon_sample_download', 'DownloadFileController@getAmazonDownload');
 
 
 });
@@ -40,6 +48,9 @@ Route::get('/about', function (){
 });
 Route::get('/contact', function (){
     return view('contact');
+});
+Route::get('/pricing', function (){
+    return view('pricing');
 });
 
 //Route::get('pdfview/{id}',array('as'=>'pdfview','uses'=>'FileInfoController@pdfview'));

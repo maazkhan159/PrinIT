@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Files;
 use App\User;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
@@ -16,6 +18,23 @@ class UserController extends Controller
     {
         $this->user_id = Auth::user()->id;
     }
+    public function dashboard(){
+    $filesCount = Files::where('user_id', $this->user_id)->groupBy('type')->select('type', DB::raw('count(*) as total'))->get();
+    $filesCountMonthly = Files::where('user_id', $this->user_id)->groupBy('type')->whereMonth('created_at', '=', date('m'))->select('type', DB::raw('count(*) as total'))->get();
+
+
+    $data = [];
+        $current_month = [];
+    foreach ($filesCount as $file){
+        $data[$file->type] = $file->total;
+    }
+    foreach ($filesCountMonthly as $file){
+        $current_month[$file->type] = $file->total;
+    }
+    $data['amazon']+= $data['amazontext'];
+     $current_month['amazon']+= $current_month['amazontext'];
+    return view('panel/user_dashboard')->with(compact('data'))->with(compact('current_month'));
+}
 
     public  function index(){
         $user = Auth::user();
