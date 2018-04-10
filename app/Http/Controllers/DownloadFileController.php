@@ -15,9 +15,27 @@ class DownloadFileController extends Controller
     {
         $this->user_id = Auth::user()->id;
     }
-    public function getAmazonDownload(){
+    public function getSimpleSampleFile(){
         $filename="simple.xlsx";
         $path = public_path('/samplefiles/') . $filename;
+        return Response::download($path);
+    }
+    public function getAmazonCsvSampleFile(){
+
+        $filename="Amazon.Csv";
+        $path = public_path('/amazoncsv/') . $filename;
+        return Response::download($path);
+    }
+    public function getAmazonTextSampleFile(){
+
+        $filename="amazon.txt";
+        $path = public_path('/amazontext/') . $filename;
+        return Response::download($path);
+    }
+    public function getEbayCsvSampleFile(){
+
+        $filename="eBay.csv";
+        $path = public_path('/ebay/') . $filename;
         return Response::download($path);
     }
 

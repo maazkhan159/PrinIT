@@ -36,10 +36,15 @@ Route::group([ 'middleware' => 'auth'], function()
     Route::get('/change_password' , function () {
         return view('panel/change_password');
     });
-    Route::get('/amazon_sample_download', 'DownloadFileController@getAmazonDownload');
+
     Route::get('/ebay_stats/{file_id}', 'StatsController@getEbayStats');
-//    Route::get('/amazon_sample_download', 'DownloadFileController@getAmazonDownload');
-  //  Route::get('/amazon_sample_download', 'DownloadFileController@getAmazonDownload');
+
+
+    //download csv
+    Route::get('/simple_sample_download', 'DownloadFileController@getSimpleSampleFile');
+    Route::get('/amazoncsv_sample_download', 'DownloadFileController@getAmazonCsvSampleFile');
+    Route::get('/amazontext_sample_download', 'DownloadFileController@getAmazonTextSampleFile');
+    Route::get('/ebay_sample_download', 'DownloadFileController@getEbayCsvSampleFile');
 
 
 });

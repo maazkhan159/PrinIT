@@ -7,11 +7,10 @@
         <div class="page-breadcrumbs">
             <ul class="breadcrumb">
                 <li>
-                    <i class="fa fa-home"></i>
-                    <a href="../../../user/index.html">Home</a>
+                    <i class="fa fa-edit"></i>
+                    <a href="">Edit Profile</a>
                 </li>
-                <li>Dashboard</li>
-                <li class="active">Edit Profile</li>
+
             </ul>
         </div>
         <!-- /Page Breadcrumb -->
@@ -19,7 +18,7 @@
         <div class="page-header position-relative">
             <div class="header-title">
                 <h1>
-                    Edit Profile
+
                 </h1>
             </div>
             <!--Header Buttons-->

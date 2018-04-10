@@ -8,10 +8,10 @@
             <div class="page-breadcrumbs">
                 <ul class="breadcrumb">
                     <li>
-                        <i class="fa fa-home"></i>
-                        <a href="index.html">Home</a>
+                        <i class="fa fa-print"></i>
+                        <a href="#">Print Label</a>
                     </li>
-                    <li class="active">Print Label</li>
+                    <li class="active">Other Format Csv</li>
                 </ul>
             </div>
             <!-- /Page Breadcrumb -->
@@ -19,7 +19,7 @@
             <div class="page-header position-relative">
                 <div class="header-title">
                     <h1>
-                        Other Formats
+                        Other Format Csv
                     </h1>
                 </div>
                 <!--Header Buttons-->
@@ -60,7 +60,7 @@
                         <div class="widget">
                             <div class="widget-header bordered-bottom bordered-themeprimary">
                                 <i class="widget-icon fa fa-tasks themeprimary"></i>
-                                <span class="widget-caption themeprimary">CSV PARSING</span>
+                                <span class="widget-caption themeprimary">Upload Other Format Csv</span>
                             </div><!--Widget Header-->
                             <div class="widget-body no-padding">
                                 <div class="task-container padding-20 whitebg">
@@ -71,9 +71,9 @@
                                             <div class="col-sm-12">
 
                                                 <div class="form-group">
-                                                    <label for="exampleInputFile">File input</label>
+
                                                     <input type="file" name="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
-                                                    <small id="fileHelp" class="form-text text-muted">Upload your csv file</small>
+                                                    <small id="fileHelp" class="form-text text-muted">Upload your Other Format Csv file</small>
                                                    
             
                                                 </div>
@@ -86,11 +86,12 @@
 
 
                                         <input type="submit" name="btn_submit"  class="btn btn-primary" value="Upload File" />
+                                        <a href="{{ url('/amazon_sample_download') }}" class="btn btn-primary">Download sample</a>
                                          
 
                                     </form>
-                                    <br>
-                                    <a href="{{ url('/amazon_sample_download') }}" class="btn btn-primary">Download sample</a>
+
+
 
 
                                 </div>
@@ -101,7 +102,7 @@
                     <div class="col-xs-12 col-md-12">
                         <div class="widget">
                             <div class="widget-header ">
-                                <span class="widget-caption">Parsing Data Table</span>
+                                <span class="widget-caption">Other Format Csv Details</span>
                                 <div class="widget-buttons">
                                     <a href="#" data-toggle="maximize">
                                         <i class="fa fa-expand"></i>

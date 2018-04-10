@@ -8,11 +8,10 @@
         <div class="page-breadcrumbs">
             <ul class="breadcrumb">
                 <li>
-                    <i class="fa fa-home"></i>
-                    <a href="../../../user/index.html">Home</a>
+                    <i class="fa fa-key"></i>
+                    <a href="#">Change Password</a>
                 </li>
-                <li>Dashboard</li>
-                <li class="active">Change Password</li>
+
             </ul>
         </div>
         <!-- /Page Breadcrumb -->
@@ -65,7 +64,7 @@
                                     <form id="registrationForm" method="post" action="{{url('user/reset_password')}}"
                                           class="form-horizontal">
                                         <div class="form-title">
-                                            Edit Password
+                                            Change Password
                                         </div>
                                         {{ method_field('PATCH') }}
 
@@ -79,7 +78,7 @@
                                             </div>
                                         @endif
                                         <div class="form-group">
-                                            <label class="col-lg-4 control-label">Password</label>
+                                            <label class="col-lg-4 control-label">New Password</label>
                                             <div class="col-lg-4">
                                                 <input type="password" class="form-control" name="password"
                                                 />
@@ -87,7 +86,7 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label class="col-lg-4 control-label">Retype password</label>
+                                            <label class="col-lg-4 control-label">Retype New password</label>
                                             <div class="col-lg-4">
                                                 <input type="password" class="form-control" name="password_confirmation"
                                                 />

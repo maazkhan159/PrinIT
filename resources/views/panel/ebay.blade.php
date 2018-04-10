@@ -8,10 +8,10 @@
             <div class="page-breadcrumbs">
                 <ul class="breadcrumb">
                     <li>
-                        <i class="fa fa-home"></i>
-                        <a href="index.html">Home</a>
+                        <i class="fa fa-print"></i>
+                        <a href="#">Print Label</a>
                     </li>
-                    <li class="active">Print Label</li>
+                    <li class="active">Ebay</li>
                 </ul>
             </div>
             <!-- /Page Breadcrumb -->
@@ -60,7 +60,7 @@
                         <div class="widget">
                             <div class="widget-header bordered-bottom bordered-themeprimary">
                                 <i class="widget-icon fa fa-tasks themeprimary"></i>
-                                <span class="widget-caption themeprimary">CSV PARSING</span>
+                                <span class="widget-caption themeprimary">Upload Ebay File</span>
                             </div><!--Widget Header-->
                             <div class="widget-body no-padding">
                                 <div class="task-container padding-20 whitebg">
@@ -71,9 +71,9 @@
                                             <div class="col-sm-12">
 
                                                 <div class="form-group">
-                                                    <label for="exampleInputFile">File input</label>
+
                                                     <input type="file" name="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
-                                                    <small id="fileHelp" class="form-text text-muted">Upload your csv file</small>
+                                                    <small id="fileHelp" class="form-text text-muted">Upload your Ebay csv file</small>
                                                 </div>
                                             </div>
                                             <input type="hidden" name="type" value="ebay">
@@ -82,6 +82,7 @@
 
 
                                         <input type="submit" name="btn_submit"  class="btn btn-primary" value="Upload File" />
+                                        <a href="{{ url('#') }}" class="btn btn-primary">Download Ebay Csv sample</a>
                                     </form>
 
                                 </div>
@@ -92,7 +93,7 @@
                     <div class="col-xs-12 col-md-12">
                         <div class="widget">
                             <div class="widget-header ">
-                                <span class="widget-caption">Parsing Data Table</span>
+                                <span class="widget-caption">Ebay File Details</span>
                                 <div class="widget-buttons">
                                     <a href="#" data-toggle="maximize">
                                         <i class="fa fa-expand"></i>
@@ -129,9 +130,11 @@
                                             </td>
                                             <td>{{$file->type}}</td>
                                             <td>
-                                                <a href="{{ url('/file/'.$file->id) }}"  class="btn btn-info btn-xs print printbtn" ><i class="fa fa-print"></i>Print</a>
+                                                <a href="{{ url('/file/'.$file->id) }}"  class="btn btn-info btn-xs print printbtn" ><i class="fa fa-print"></i></a>
 
-                                                <a href="{{ url('/delete/file/'.$file->id) }}" class="btn btn-danger btn-xs delete"><i class="fa fa-trash-o"></i> Delete</a>
+                                                <a href="{{ url('/delete/file/'.$file->id) }}" class="btn btn-danger btn-xs delete"><i class="fa fa-trash-o"></i> </a>
+                                                <a href="{{ url('#') }}" class="btn btn-purple btn-xs "><i class="fa fa-line-chart"></i> </a>
+
                                             </td>
 
                                         </tr>

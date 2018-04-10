@@ -16,19 +16,17 @@
         <div class="page-breadcrumbs">
             <ul class="breadcrumb">
                 <li>
-                    <i class="fa fa-home"></i>
-                    <a href="../../../user/index.html">Home</a>
+                    <i class="fa fa-info"></i>
+                    <a href="">Add Return Address</a>
                 </li>
-                <li>Dashboard</li>
-                <li class="active">Add Information</li>
-            </ul>
+                </ul>
         </div>
         <!-- /Page Breadcrumb -->
         <!-- Page Header -->
         <div class="page-header position-relative">
             <div class="header-title">
                 <h1>
-                    Add Information
+                    Add Return Address
                 </h1>
             </div>
             <!--Header Buttons-->
@@ -85,7 +83,7 @@
                                           data-bv-feedbackicons-invalid="glyphicon glyphicon-remove"
                                           data-bv-feedbackicons-validating="glyphicon glyphicon-refresh">
                                         <div class="form-title">
-                                            Add Information
+                                            Add Return Address
                                         </div>
 
                                         <div class="form-group">
@@ -151,7 +149,7 @@
                     <div class="col-xs-12 col-md-12">
                         <div class="widget">
                             <div class="widget-header ">
-                                <span class="widget-caption">Parsing Data Table</span>
+                                <span class="widget-caption">Return Address Details</span>
                                 <div class="widget-buttons">
                                     <a href="#" data-toggle="maximize">
                                         <i class="fa fa-expand"></i>
@@ -172,7 +170,7 @@
                                             Sr. No
                                         </th>
                                         <th>
-                                           Address
+                                           Return Address
                                         </th>
                                         <th>
                                             Logo

@@ -18,5 +18,11 @@ class FileController extends Controller
     {
         $this->user_id = Auth::user()->id;
     }
+    public function deleteFile($id)
+    {
+        $files = Files::destroy($id);
+        FileInfo::where('file_id',$id)->delete();
 
+        return redirect()->back()->with('status', 'File has been deleted successfully!');
+    }
 }
