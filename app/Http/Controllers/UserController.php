@@ -21,18 +21,17 @@ class UserController extends Controller
     public function dashboard(){
     $filesCount = Files::where('user_id', $this->user_id)->groupBy('type')->select('type', DB::raw('count(*) as total'))->get();
     $filesCountMonthly = Files::where('user_id', $this->user_id)->groupBy('type')->whereMonth('created_at', '=', date('m'))->select('type', DB::raw('count(*) as total'))->get();
-
-
-    $data = [];
-        $current_month = [];
+     $current_month = $data = ['amazon' =>  0 ,'amazontext'=>0 ,'ebay' =>  0 ,'simple'=>0 ];
     foreach ($filesCount as $file){
         $data[$file->type] = $file->total;
     }
     foreach ($filesCountMonthly as $file){
         $current_month[$file->type] = $file->total;
     }
-    $data['amazon']+= $data['amazontext'];
+     $data['amazon']+= $data['amazontext'];
+
      $current_month['amazon']+= $current_month['amazontext'];
+
     return view('panel/user_dashboard')->with(compact('data'))->with(compact('current_month'));
 }
 

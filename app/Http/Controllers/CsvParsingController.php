@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 use Maatwebsite\Excel\Facades\Excel;
 
 
@@ -29,13 +30,13 @@ class CsvParsingController extends Controller
             $data = $this->parsing($path ,$type);
 
             if(!$data){
-                unlink($path);
+                File::delete($path);
                 return redirect()->back()->with('error', 'Wrong format uploaded! ');
 
             }
             $file_inserted_id = $this->saveFileNameInDB($filename , $type);
             $this->saveFileInfo($data, $file_inserted_id , $type);
-            unlink($path);
+            File::delete($path);
             return redirect()->back()->with('status', 'File has been added successfully!');
         }
         else {
@@ -47,8 +48,8 @@ class CsvParsingController extends Controller
     }
     private  function parsing($path ,$type){
          $ext = pathinfo($path, PATHINFO_EXTENSION);
-        if($type == "amazontext"){
-            if($ext != "txt") return false;
+		if($type == "amazontext"){
+		    if($ext != "txt") return false;
             return $this->amazonTextFileParsing($path);
 
         }
@@ -58,8 +59,7 @@ class CsvParsingController extends Controller
             })
                 ->toArray();
             $parsed_data = [];
-
-            if ($type == "ebay" && (!array_key_exists('sales_record_number', $data[0]))) {
+		    if ($type == "ebay" && (!array_key_exists('sales_record_number', $data[0]))) {
                 return false;
             } else if ($type == "amazon" && !array_key_exists('order_item_id', $data[0])) {
                 return false;
@@ -70,8 +70,6 @@ class CsvParsingController extends Controller
             }
 
             foreach ($data as $value) {
-
-
                 if (array_key_exists('address', $value) || array_key_exists('sales_record_number', $value)
                     || array_key_exists('order_item_id', $value)) {
 
@@ -84,7 +82,7 @@ class CsvParsingController extends Controller
             return $parsed_data;
         }
         else
-        {return false;}
+        { return false; }
 
     }
     private function amazonTextFileParsing($path){
