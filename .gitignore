@@ -4,7 +4,3 @@
 Homestead.yaml
 Homestead.json
 /.idea
-.env
-/public/uploadedCsv
-/public/user_logo
-/public/user_profile_image
