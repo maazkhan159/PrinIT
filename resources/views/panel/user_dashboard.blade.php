@@ -44,7 +44,7 @@
                         <div class="databox bg-white radius-bordered">
                             <div class="databox-left bg-themesecondary">
                                 <div class="databox-piechart">
-                                    <i class="stat-icon icon-lg fa fa-users" style="font-size:38px"></i>
+                                    <i class="stat-icon icon-lg fa fa-file" style="font-size:38px"></i>
                                 </div>
                             </div>
                             <div class="databox-right">
@@ -56,7 +56,7 @@
                                 <span class="databox-number themesecondary"></span>
                                 
                                 <div class="databox-stat themesecondary radius-bordered">
-                                    <i class="stat-icon icon-lg fa fa-users"></i>
+                                    <i class="stat-icon icon-lg fa fa-file"></i>
                                 </div>
                             </div>
                         </div>
@@ -65,17 +65,17 @@
                         <div class="databox bg-white radius-bordered">
                             <div class="databox-left bg-themethirdcolor">
                                 <div class="databox-piechart">
-                                   <i class="stat-icon icon-lg fa fa-check" style="font-size:38px"></i>
+                                   <i class="stat-icon icon-lg fa fa-file" style="font-size:38px"></i>
                                 </div>
                             </div>
                             <div class="databox-right" >
                                  <div class="databox-text darkgray" style="font-size: 14px;">Total No Of Ebay Csv <span>
                                          (<b>{{$data['ebay']}}</b>)
                                      </span></div>
-                                <span class="databox-number themethirdcolor"></span>
-                               
+                                <span class="databox-number themeprimary"></span>
+
                                 <div class="databox-stat themethirdcolor radius-bordered">
-                                    <i class="stat-icon  icon-lg fa fa-check"></i>
+                                    <i class="stat-icon  icon-lg fa fa-file"></i>
                                 </div>
                             </div>
                         </div>
@@ -84,7 +84,7 @@
                         <div class="databox bg-white radius-bordered">
                             <div class="databox-left bg-themeprimary">
                                 <div class="databox-piechart">
-                                    <i class="stat-icon icon-lg fa fa-building" style="font-size:38px"></i>
+                                    <i class="stat-icon icon-lg fa fa-file" style="font-size:38px"></i>
                                 </div>
                             </div>
                             <div class="databox-right">
@@ -96,7 +96,7 @@
                                 <span class="databox-number themeprimary"></span>
                                
                                 <div class="databox-state bg-themeprimary">
-                                    <i class="fa fa-building"></i>
+                                    <i class="fa fa-file"></i>
                                 </div>
                             </div>
                         </div>

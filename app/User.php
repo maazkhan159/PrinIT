@@ -36,7 +36,7 @@ class User extends Authenticatable
 
     public function isAdmin()
     {
-        $email = "admin@gmail.com";
+        $email = "admin@admin.com";
         return Auth::user()->email == $email ? true : false;
     }
 }
