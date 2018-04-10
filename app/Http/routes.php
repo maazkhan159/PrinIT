@@ -23,8 +23,9 @@ Route::group([ 'middleware' => 'auth'], function()
     Route::get('/file/{id}','FileInfoController@getFileInfo');
     Route::get('/delete/file/{id}','FileController@deleteFile');
     Route::get('/user_dashboard','UserController@dashboard');
+
     Route::get('/amazon','AmazonController@getFiles');
-    Route::get('/amazontext','AmazonController@getTextFiles');
+    Route::get('/amazontextfile','AmazonController@getTextFiles');
     Route::get('/simple','SimpleController@getFiles');
     Route::post('/save_address','AddressController@saveAddress');
     Route::get('/add_information','AddressController@index');
@@ -38,6 +39,8 @@ Route::group([ 'middleware' => 'auth'], function()
     });
 
     Route::get('/ebay_stats/{file_id}', 'StatsController@getEbayStats');
+    Route::get('/amazon_stats/{file_id}', 'StatsController@getAmazonStats');
+    Route::get('/simple_stats/{file_id}', 'StatsController@getSimpleStats');
 
 
     //download csv
@@ -46,6 +49,13 @@ Route::group([ 'middleware' => 'auth'], function()
     Route::get('/amazontext_sample_download', 'DownloadFileController@getAmazonTextSampleFile');
     Route::get('/ebay_sample_download', 'DownloadFileController@getEbayCsvSampleFile');
 
+    /*
+     * Admin Route*/
+    Route::group([ 'middleware' => 'admin'], function() {
+        Route::get('/employees', 'AdminController@employeeList');
+        Route::get('/employees/{user_id}/stats', 'AdminController@stats');
+        Route::get('/employees/{user_id}/delete', 'AdminController@removeEmployee');
+    });
 
 });
 Route::get('/about', function (){

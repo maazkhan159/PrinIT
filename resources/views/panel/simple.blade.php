@@ -86,7 +86,7 @@
 
 
                                         <input type="submit" name="btn_submit"  class="btn btn-primary" value="Upload File" />
-                                        <a href="{{ url('/amazon_sample_download') }}" class="btn btn-primary">Download sample</a>
+                                        <a href="{{ url('/simple_sample_download') }}" class="btn btn-primary">Download sample</a>
                                          
 
                                     </form>
@@ -142,6 +142,8 @@
                                                 <a href="{{ url('/file/'.$file->id) }}"  class="btn btn-info btn-xs print printbtn" ><i class="fa fa-print"></i>Print</a>
 
                                                 <a href="{{ url('/delete/file/'.$file->id) }}" class="btn btn-danger btn-xs delete"><i class="fa fa-trash-o"></i> Delete</a>
+                                                <a href="{{ url('/simple_stats/'.$file->id) }}" class="btn btn-purple btn-xs "><i class="fa fa-line-chart"></i> </a>
+
                                             </td>
 
                                         </tr>

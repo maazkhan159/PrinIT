@@ -160,7 +160,7 @@
         </a>
 
         <ul class="submenu">
-            <li class="{{ Request::is('ebayfile') ? 'active' : '' }}" ><a href="{{ url('ebayfile')}}" title="EBay">
+            <li class="{{ Request::is('ebayfile') ? 'active' : '' }}" ><a href="{{ url('/ebayfile')}}" title="EBay">
                 
                     <span class="menu-text">Ebay</span>
                 </a>
@@ -176,7 +176,7 @@
                     </a>
                         
                     </li>
-                    <li><a  href="{{ url('amazontext')}}"  title="text file">
+                    <li><a  href="{{ url('/amazontextfile')}}"  title="text file">
                         <span class="menu-text">Amazon Text File</span>
                     </a>
                         
@@ -215,6 +215,14 @@
                         <span class="menu-text">Change Password</span>
                     </a>
                 </li>
+                @if(Auth::user()->isAdmin())
+                <li class="{{ Request::is('employees') ? 'active' : '' }}">
+                    <a href="{{ url('/employees') }}">
+                        <i class="menu-icon fa fa-users"></i>
+                        <span class="menu-text">Employees</span>
+                    </a>
+                </li>
+                @endif
                 <li class="{{ Request::is('logout') ? 'active' : '' }}">
                     <a href="{{ url('/logout') }}">
                         <i class="menu-icon fa fa-sign-out"></i>

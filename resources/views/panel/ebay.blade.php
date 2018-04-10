@@ -82,7 +82,7 @@
 
 
                                         <input type="submit" name="btn_submit"  class="btn btn-primary" value="Upload File" />
-                                        <a href="{{ url('#') }}" class="btn btn-primary">Download Ebay Csv sample</a>
+                                        <a href="{{ url('/ebay_sample_download') }}" class="btn btn-primary">Download Ebay Csv sample</a>
                                     </form>
 
                                 </div>
@@ -133,7 +133,7 @@
                                                 <a href="{{ url('/file/'.$file->id) }}"  class="btn btn-info btn-xs print printbtn" ><i class="fa fa-print"></i></a>
 
                                                 <a href="{{ url('/delete/file/'.$file->id) }}" class="btn btn-danger btn-xs delete"><i class="fa fa-trash-o"></i> </a>
-                                                <a href="{{ url('#') }}" class="btn btn-purple btn-xs "><i class="fa fa-line-chart"></i> </a>
+                                                <a href="{{ url('/ebay_stats/'.$file->id) }}" class="btn btn-purple btn-xs "><i class="fa fa-line-chart"></i> </a>
 
                                             </td>
 

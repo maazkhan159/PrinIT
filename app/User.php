@@ -2,10 +2,14 @@
 
 namespace App;
 
+
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\Auth;
 
 class User extends Authenticatable
 {
+    use SoftDeletes;
     /**
      * The attributes that are mass assignable.
      *
@@ -23,4 +27,16 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+    protected $dates = ['deleted_at'];
+
+    public function files()
+    {
+        return $this->hasMany('App\Files');
+    }
+
+    public function isAdmin()
+    {
+        $email = "admin@gmail.com";
+        return Auth::user()->email == $email ? true : false;
+    }
 }
