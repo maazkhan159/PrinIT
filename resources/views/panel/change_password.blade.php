@@ -19,7 +19,7 @@
         <div class="page-header position-relative">
             <div class="header-title">
                 <h1>
-                    Change Password
+
                 </h1>
             </div>
             <!--Header Buttons-->
