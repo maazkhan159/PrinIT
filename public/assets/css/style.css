@@ -502,7 +502,7 @@ body a:focus {
 	text-align:center;
 }
 .about, .footer-top, .team, .typo, .banner-bottom, .main-grid-border, .gallery_main {
-    padding: 5em 0em;
+    padding:0em 0em;
 }
 .services {
     padding: 1em 0 5em;

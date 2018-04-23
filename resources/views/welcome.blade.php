@@ -90,7 +90,7 @@ height: 35px; background-color:#3b3bc2; border-color: #3b3bc2; font-size: 15px;"
     <div class="row">
     
     <div class="col-md-6 no-padding" style="padding-right: 0px;
-padding-left: 0px;">
+padding-left: 0px;     max-width: 101%;">
     <img src="{{ URL::to('/assets/images/vector4555.png')}}" class="img-responsive" >
 </div>
 
@@ -105,7 +105,7 @@ padding-left: 0px;">
     </div>
     <div style="padding-left: 113px;margin-top: -66px;">
         <h4 style="font-weight: 700;font-size: 15px;color: #000;text-transform: uppercase;margin-bottom: 5px;">Quick and easy eBay listings</h4>
-        <p style="color: #555;font-weight: 400;font-size: 14px;line-height: 28px;padding-bottom: 25px;font-family: "Open Sans", sans-serif; ">It's a two step process to get a listing's details from Amazon and post it on eBay. Use profit, shipping and other defaults from your user settings. </p>
+        <p style="color: #555;font-weight: 400;font-size: 14px;line-height: 28px;padding-bottom: 25px;font-family: Open Sans, sans-serif; ">It's a two step process to get a listing's details from Amazon and post it on eBay. Use profit, shipping and other defaults from your user settings. </p>
          </div>
 <div>
 

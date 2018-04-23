@@ -72,9 +72,6 @@
             </div>
         </div>
     </div>
-    <div class="map wow fadeInUp animated" data-wow-delay=".5s">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50996.31320435244!2d-122.06676498187694!3d36.97949802442312!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808e441b7c36d549%3A0x52ca104b2ad7f985!2sSanta+Cruz%2C+CA%2C+USA!5e0!3m2!1sen!2sin!4v1469096018666" style="border:0"></iframe>
-    </div>
 
     <!-- //mail -->
 

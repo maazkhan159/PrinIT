@@ -5,11 +5,24 @@
     }
 </style>
 @section('body_content')
-<div class="container" style="margin-top: 30px; margin-bottom: 30px">
+    <div class="services-breadcrumb">
+        <div class="agile_inner_breadcrumb">
+            <ul class="w3_short">
+                <li><a href="#">Home</a><i>||</i></li>
+                <li>Register</li>
+            </ul>
+        </div>
+    </div>
+    <div class="about w3layouts-agileinfo" id="about" style="background-color: #fff;">
+        <div class="container">
+            <h3 class="title-w3l"><span>R</span>egister</h3>
+
+        </div>
+    <div class="container" style="margin-top: 30px; margin-bottom: 30px">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Register</div>
+                <div class="panel-heading"></div>
                 <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
                         {{ csrf_field() }}

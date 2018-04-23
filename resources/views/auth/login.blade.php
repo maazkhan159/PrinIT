@@ -5,6 +5,22 @@
     }
 </style>
 @section('body_content')
+    <div class="services-breadcrumb">
+        <div class="agile_inner_breadcrumb">
+            <ul class="w3_short">
+                <li><a href="#">Home</a><i>||</i></li>
+                <li>Login</li>
+            </ul>
+        </div>
+    </div>
+    <div class="about w3layouts-agileinfo" id="about" style="background-color: #fff;">
+        <div class="container">
+            <h3 class="title-w3l"><span>L</span>ogin</h3>
+
+        </div>
+        <div>
+
+        </div>
     <div class="container" style="margin-top: 30px; margin-bottom: 30px">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
@@ -56,7 +72,6 @@
                                     <i class="fa fa-btn fa-send"></i> Login
                                 </button>
 
-                                <a class="btn btn-link" href="{{ url('/password/reset') }}">Forgot Your Password?</a>
                             </div>
                         </div>
                     </form>

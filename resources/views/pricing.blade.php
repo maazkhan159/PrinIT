@@ -1,6 +1,14 @@
 @extends('layouts/main')
 
 @section('body_content')
+    <div class="services-breadcrumb">
+        <div class="agile_inner_breadcrumb">
+            <ul class="w3_short">
+                <li><a href="#">Home</a><i>||</i></li>
+                <li>PRICING</li>
+            </ul>
+        </div>
+    </div>
 
 <div class="about w3layouts-agileinfo" id="about" style="background-color: #8080801a;">
     <div class="container">
@@ -8,7 +16,7 @@
         <a href="signin.php"><i class="fa fa-sign-in" title="Sign In" style="font-size: 50px; color: green; margin-right: 1092px; margin-top: -25px;"></i></a></div>
         <div>
         <a href="signup.php"><i class="fa fa-user-plus" title="Sign up" style="font-size: 50px; color: green; margin-right: 950px; margin-top: -25px;"></i></a></div> -->
-        <h3 class="title-w3l"><span>W</span>elcome</h3>
+        <h3 class="title-w3l"><span>P</span>RICING</h3>
 
     </div>
     <div>
@@ -24,9 +32,13 @@
                         
                         <h3 id="thumbnail-label" style="color: balck;">Starter</h3>
                         <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                        <a href="#" class="btn btn-success" style="width: 106px;
-height: 35px; background-color:black; border-color:black; font-size: 15px;">Select</a>
-                    </div>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="VWQA4ER3J8MJ8">
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_subscribeCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>                        
+						</div>
                     <div class="caption card-footer">
 
                     </div>
@@ -39,8 +51,12 @@ height: 35px; background-color:black; border-color:black; font-size: 15px;">Sele
                     <div class="caption">
                         <h3 id="thumbnail-label" style="color:#17aa17;">Basic</h3>
                         <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                        <a href="#" class="btn btn-success" style="width: 106px;
-height: 35px; background-color:#17aa17; border-color:#17aa17; font-size: 15px;">Select</a>
+                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="5EWX4NMYQ9CCE">
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_subscribeCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
                     </div>
                     <div class="caption card-footer">
                         <ul class="list-inline">
@@ -56,8 +72,12 @@ height: 35px; background-color:#17aa17; border-color:#17aa17; font-size: 15px;">
                     <div class="caption">
                         <h3 id="thumbnail-label" style="color:#3b3bc2;">Advance</h3>
                         <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                        <a href="#" class="btn btn-success" style="width: 106px;
-height: 35px; background-color:#3b3bc2; border-color: #3b3bc2; font-size: 15px;">Select</a>
+                   <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="QJJCTFKTPG3NS">
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_subscribeCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
                     </div>
                     <div class="caption card-footer">
 
@@ -70,8 +90,13 @@ height: 35px; background-color:#3b3bc2; border-color: #3b3bc2; font-size: 15px;"
                     <div class="caption">
                         <h3 id="thumbnail-label" style="color: #d21212;">Business</h3>
                         <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                        <a href="#" class="btn btn-success" style="width: 106px;
-height: 35px; background-color:#d21212; border-color: #d21212; font-size: 15px;">Select</a>
+                 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="JRZM6EX38UB84">
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_subscribeCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form> 
+
                     </div>
                     <div class="caption card-footer">
 

@@ -219,7 +219,7 @@
                 <li class="{{ Request::is('employees') ? 'active' : '' }}">
                     <a href="{{ url('/employees') }}">
                         <i class="menu-icon fa fa-users"></i>
-                        <span class="menu-text">Employees</span>
+                        <span class="menu-text">Customers</span>
                     </a>
                 </li>
                 @endif
