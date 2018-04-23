@@ -112,7 +112,7 @@
 
         window.onafterprint = function(e){
             $(window).off('mousemove', window.onafterprint);
-         //  history.back();
+          history.back();
         };
 
 
