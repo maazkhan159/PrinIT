@@ -75,7 +75,7 @@
 
         <div class="row">
             @foreach ($file_info as $data)
-                <div style="float: left; height: 280px ; border: 1px solid red">
+                <div style="float: left; height: 280px ">
                         <div  style="float: left; margin-left: 30px;">
                             <p class="name" style="width: 50px">  {{$data['name']}}</p>
                             <address  >
