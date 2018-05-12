@@ -37,7 +37,7 @@
 
             <div class="logo">
                 <a>
-                    <img src="{{URL::to ('assets/images/121212.png')}}" alt="Logo" width="195px" height="126px" >
+                    <img src="{{URL::to ('assets/images/1212.png')}}" alt="Logo" width="195px" height="126px" >
                 </a>
             </div>
             <div class="clearfix"> </div>

@@ -47,7 +47,8 @@
             <div class="navbar-header pull-left">
                 <a href="#" class="navbar-brand">
                     <small>
-                        <img src="{{URL::to ('assets/images/123456.png')}}" alt="" />
+                        <img style="width: 85px;padding-left: 5px;" src="{{URL::to ('assets/images/1212.png')}}" alt="">
+
                     </small>
                 </a>
             </div>
