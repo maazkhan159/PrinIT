@@ -31,16 +31,16 @@ class CsvParsingController extends Controller
 
             if(!$data){
                 File::delete($path);
-                return redirect()->back()->with('error', 'Wrong format uploaded! ');
+                return redirect()->back()->with('error', ' Wrong format uploaded ');
 
             }
             $file_inserted_id = $this->saveFileNameInDB($filename , $type);
             $this->saveFileInfo($data, $file_inserted_id , $type);
             File::delete($path);
-            return redirect()->back()->with('status', 'File has been added successfully!');
+            return redirect()->back()->with('status', ' File has been added successfully');
         }
         else {
-            return redirect()->back()->with('error', 'File is missing!');
+            return redirect()->back()->with('error', ' File is missing');
         }
 
 
@@ -56,8 +56,7 @@ class CsvParsingController extends Controller
         if($ext == "csv" || $ext == "xlsx") {
 
             $data = Excel::load($path, function ($reader) {
-            })
-                ->toArray();
+            })->toArray();
             $parsed_data = [];
 		    if ($type == "ebay" && (!array_key_exists('sales_record_number', $data[0]))) {
                 return false;

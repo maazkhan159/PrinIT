@@ -22,6 +22,7 @@ class AddressController extends Controller
         $addresses = $this->getAddresses();
         return view('panel/add_information')->with(compact('addresses'));
     }
+   
     public  function saveAddress(Request $request){
         $input = $request->all();
 
@@ -31,6 +32,38 @@ class AddressController extends Controller
             'postal_code' => 'required',
             'city' => 'required',
             'state' => 'required',
+            //'logo' => 'required',
+        ]);
+
+        if(array_key_exists('logo', $input)) {
+
+
+//        save file in server and get saved path
+            $file = $input['logo'];
+
+            $filename = time() . '.' . $file->getClientOriginalName();
+            $file->move(public_path('/user_logo'), $filename);
+            $path = '/user_logo/' . $filename;
+            // assign logo path
+            $input['logo'] = $path;
+        }
+        $input['user_id'] = $this->user_id;
+        // now saving in db
+
+        Address::create($input);
+        return redirect()->back()->with('status', ' Your Return address has been sucessfully added');
+
+
+    }
+     public function logo(){
+         $addresses = $this->getAddresses();
+        return view('panel/logo')->with(compact('addresses'));
+    }
+    public  function savelogo(Request $request){
+        $input = $request->all();
+
+        $this->validate($request,[
+           
             'logo' => 'required',
         ]);
 
@@ -50,7 +83,7 @@ class AddressController extends Controller
         // now saving in db
 
         Address::create($input);
-        return redirect()->back()->with('status', 'Your Return adress has been sucessfully added!');
+        return redirect()->back()->with('status', ' Your PPI Image has been sucessfully added');
 
 
     }
@@ -65,6 +98,6 @@ class AddressController extends Controller
         Address::destroy($id);
        $path = public_path($address->logo);
       //  File::delete($path);
-        return redirect()->back()->with('status', 'Your file has been deleated sucessfully!');
+        return redirect()->back()->with('status', ' Your file has been deleated sucessfully');
     }
 }

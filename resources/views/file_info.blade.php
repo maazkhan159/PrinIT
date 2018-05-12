@@ -8,7 +8,7 @@
                 @page {
                     size: auto;   /* auto is the initial value */
                     size: A4 portrait;
-                    margin: 2px;  /* this affects the margin in the printer settings */
+                    margin: 8px;  /* this affects the margin in the printer settings */
                 }
             }
             address {
@@ -25,6 +25,7 @@
                 font-size: small;
                  font-weight: bolder;
                 width: 50px;
+                padding-top: 5px;
             }
             .file .baddress{
                 font-size: small;
@@ -84,7 +85,7 @@
                             <p class="baddress">  {{$data['quantity']}} /  {{$data['product_name']}}</p>
                         </div>
                         <div  style="float: left; margin-left: 45px">
-                            <div class="text-center">  {{$data['date']}}</div>
+                            <div class="text-center"> 07-05-2018 </div>
 
                             <img src="{{URL::to ($address->logo)}}" alt="logo" class="img-responsive img-thumbnail">
                             <div class="type text-center">  {{$data['type_of_shipment']}}</div>
@@ -108,18 +109,13 @@
 
     </div>
     <script src="{{URL::to ('/assets/js/jquery.min.js')}}"></script>
-    <script>
+    {{--<script>--}}
 
-        window.onafterprint = function(e){
-            $(window).off('mousemove', window.onafterprint);
-          history.back();
-        };
-
-
-
-
-
-    </script>
+        {{--window.onafterprint = function(e){--}}
+            {{--$(window).off('mousemove', window.onafterprint);--}}
+          {{--history.back();--}}
+        {{--};--}}
+    {{--</script>--}}
     </body>
 
 

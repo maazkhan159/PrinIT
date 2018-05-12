@@ -29,6 +29,6 @@ class EbayController extends Controller
         $files = Files::destroy($id);
         FileInfo::where('file_id',$id)->delete();
 
-        return redirect()->back()->with('status', 'File has been deleted successfully!');
+        return redirect()->back()->with('status', ' File has been deleted successfully');
     }
 }

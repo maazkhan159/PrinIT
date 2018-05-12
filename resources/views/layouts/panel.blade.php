@@ -194,15 +194,37 @@
             
         </ul>
     </li>
+    <li>
+        <a href="#" class="menu-dropdown open">
+            <i class="menu-icon fa fa-info"></i>
+            <span class="menu-text"> Add Information</span>
+
+            <i class="menu-expand"></i>
+        </a>
+
+        <ul class="submenu">
+            <li class="{{ Request::is('add_information') ? 'active' : '' }}" ><a href="{{ url('add_information')}}" title="EBay">
+                
+                    <span class="menu-text">Return Address</span>
+                </a>
+            </li>
+           
+                    <li><a  href="{{ url('/add_image')}}"  title="text file">
+                        <span class="menu-text">PPI Image</span>
+                    </a>
+                        
+                    </li>   
+        </ul>
+    </li>
     
 
                 <!--Databoxes-->
-                <li class="{{ Request::is('add_information') ? 'active' : '' }}">
+               <!--  <li class="{{ Request::is('add_information') ? 'active' : '' }}">
                     <a href="{{ url('add_information')}}">
                         <i class="menu-icon fa fa-info"></i>
                         <span class="menu-text">Add Information</span>
                     </a>
-                </li>
+                </li> -->
                 <li class="{{ Request::is('edit_profile') ? 'active' : '' }}">
                     <a href="{{ url('edit_profile')}}">
                         <i class="menu-icon fa fa-edit"></i>

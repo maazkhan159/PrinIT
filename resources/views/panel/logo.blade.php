@@ -17,7 +17,7 @@
             <ul class="breadcrumb">
                 <li>
                     <i class="fa fa-info"></i>
-                    <a href="">Add Return Address</a>
+                    <a href="">Add PPI Image</a>
                 </li>
                 </ul>
         </div>
@@ -77,54 +77,25 @@
                                             </ul>
                                         </div>
                                     @endif
-                                    <form id="registrationForm" method="post" action="{{ url('/save_address') }}" accept-charset="utf-8" enctype="multipart/form-data" class="form-horizontal"
+                                    <form id="registrationForm" method="post" action="{{ url('/save_logo') }}" accept-charset="utf-8" enctype="multipart/form-data" class="form-horizontal"
                                           data-bv-message="This value is not valid"
                                           data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
                                           data-bv-feedbackicons-invalid="glyphicon glyphicon-remove"
                                           data-bv-feedbackicons-validating="glyphicon glyphicon-refresh">
                                         <div class="form-title">
-                                            Add Return Address
+                                            Add PPI Image
                                         </div>
 
                                         <div class="form-group">
-                                            <label class="col-lg-4 control-label">Address<span style="color: red">*</span></label>
+                                            <label class="col-lg-4 control-label">Upload PPI Iamge 1<span style="color: red">*</span></label>
                                             <div class="col-lg-4">
-                                                <input type="text" class="form-control" name="address" required></div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-lg-4 control-label">Country Name<span style="color: red">*</span></label>
-                                            <div class="col-lg-4">
-                                                <input type="text" class="form-control" name="country" required>
-                                            </div>
+                                                <input name="logo" id="fileToUpload"
+                                                     type="file">
 
-
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label class="col-lg-4 control-label">City Name<span style="color: red">*</span></label>
-                                            <div class="col-lg-4">
-                                                <input type="text" class="form-control" name="city" required>
                                             </div>
                                         </div>
-
-
-                                        <div class="form-group">
-                                            <label class="col-lg-4 control-label">Postal code<span style="color: red">*</span> </label>
-                                            <div class="col-lg-4">
-                                                <input class="form-control" name="postal_code" type="text" required maxlength="10">
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label class="col-lg-4 control-label">State<span style="color: red">*</span></label>
-                                            <div class="col-lg-4">
-                                                <input class="form-control" name="state" type="text" required>
-                                            </div>
-                                        </div>
-
-
-                                        <!-- <div class="form-group">
-                                            <label class="col-lg-4 control-label">Upload Logo<span style="color: red">*</span></label>
+                                         <!-- <div class="form-group">
+                                            <label class="col-lg-4 control-label">Upload PPI Iamge 2<span style="color: red">*</span></label>
                                             <div class="col-lg-4">
                                                 <input name="logo" id="fileToUpload"
                                                      type="file">
@@ -133,7 +104,7 @@
                                         </div> -->
                                         <div class="form-group">
                                             <div class="col-lg-offset-4 col-lg-8">
-                                                <input class="btn btn-palegreen" type="submit" value="Submit"/>
+                                                <input class="btn btn-palegreen" type="submit" value="Upload"/>
                                             </div>
 
                                         </div>
@@ -149,7 +120,7 @@
                     <div class="col-xs-12 col-md-12">
                         <div class="widget">
                             <div class="widget-header ">
-                                <span class="widget-caption">Return Address Details</span>
+                                <span class="widget-caption">PPI Image Details</span>
                                 <div class="widget-buttons">
                                     <a href="#" data-toggle="maximize">
                                         <i class="fa fa-expand"></i>
@@ -170,11 +141,11 @@
                                             Sr. No
                                         </th>
                                         <th>
-                                           Return Address
+                                           PPI Image 1
                                         </th>
-                                        <!-- <th>
-                                            Logo
-                                        </th> -->
+                                         <th>
+                                           PPI Image 2
+                                        </th>
                                          <th>
                                             Actions
                                         </th>
@@ -187,13 +158,14 @@
                                             {{$address->id}}
                                         </td>
                                         <td>
-                                            {{$address->address}}   {{$address->city}}  {{$address->state}}  {{$address->country}}  {{$address->postal_code}}
-
+                                           <!--  {{$address->address}}   {{$address->city}}  {{$address->state}}  {{$address->country}}  {{$address->postal_code}}
+ -->
+                                               <img src="{{URL::to ($address->logo)}}" alt="log" class="img-responsive img-thumbnail"> 
                                         </td>
-                                        <!-- <td>
+                                        <td>
 
-                                            <img src="{{URL::to ($address->logo)}}" alt="log" class="img-responsive img-thumbnail">
-                                        </td> -->
+                                            <img src="{{URL::to ($address->logo1)}}" alt="log" class="img-responsive img-thumbnail">
+                                        </td>
                                         <td>
                                             <a href="{{ url('/delete/address/'.$address->id) }}" class="btn btn-danger btn-xs delete"><i
                                                         class="fa fa-trash-o"></i> Delete</a>
