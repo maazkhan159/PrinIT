@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <title>Easy Label Printing</title>
-    {{--<link rel="stylesheet" href="{{ URL::to('/assets/css/bootstrap.css') }}">--}}
+
     <meta name="description" content="Dashboard" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -108,7 +108,7 @@
                                 <!--/Theme Selector Area-->
                                 <li class="dropdown-footer">
                                     <a href="{{ url('/logout') }}" style="color: #5db2ff">
-                                        Sign out
+                                        Logout
                                     </a>
                                 </li>
                             </ul>
@@ -140,9 +140,16 @@
             <!-- Sidebar Menu -->
             <ul class="nav sidebar-menu">
                 <!--Dashboard-->
+                <li class="{{ Request::is('/') ? 'active' : '' }}">
+                    <a href="{{ url('/')}}">
+                        <i class="menu-icon glyphicon glyphicon-home"></i>
+                        <span class="menu-text"> Home </span>
+                    </a>
+                </li>
+
                 <li class="{{ Request::is('user_dashboard') ? 'active' : '' }}">
                     <a href="{{ url('user_dashboard')}}">
-                        <i class="menu-icon glyphicon glyphicon-home"></i>
+                        <i class="menu-icon glyphicon glyphicon-dashboard"></i>
                         <span class="menu-text"> Dashboard </span>
                     </a>
                 </li>
@@ -210,15 +217,22 @@
                 </a>
             </li>
            
-                    <li><a  href="{{ url('/add_image')}}"  title="text file">
+                    <li><a  href="{{ url('/images')}}"  title="text file">
                         <span class="menu-text">PPI Image</span>
                     </a>
                         
                     </li>   
         </ul>
     </li>
-    
 
+                @if(Auth::user()->isAdmin())
+                    <li class="{{ Request::is('employees') ? 'active' : '' }}">
+                        <a href="{{ url('/employees') }}">
+                            <i class="menu-icon fa fa-users"></i>
+                            <span class="menu-text">Customers</span>
+                        </a>
+                    </li>
+            @endif
                 <!--Databoxes-->
                <!--  <li class="{{ Request::is('add_information') ? 'active' : '' }}">
                     <a href="{{ url('add_information')}}">
@@ -238,14 +252,7 @@
                         <span class="menu-text">Change Password</span>
                     </a>
                 </li>
-                @if(Auth::user()->isAdmin())
-                <li class="{{ Request::is('employees') ? 'active' : '' }}">
-                    <a href="{{ url('/employees') }}">
-                        <i class="menu-icon fa fa-users"></i>
-                        <span class="menu-text">Customers</span>
-                    </a>
-                </li>
-                @endif
+
                 <li class="{{ Request::is('logout') ? 'active' : '' }}">
                     <a href="{{ url('/logout') }}">
                         <i class="menu-icon fa fa-sign-out"></i>

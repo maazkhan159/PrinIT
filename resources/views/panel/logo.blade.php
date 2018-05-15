@@ -2,6 +2,10 @@
 
 @section('body_content')
 @push('css')
+    <?php
+    $counter = 0;
+
+    ?>
     <style>
         .img-thumbnail{
             max-width: 150px;
@@ -17,7 +21,7 @@
             <ul class="breadcrumb">
                 <li>
                     <i class="fa fa-info"></i>
-                    <a href="">Add PPI Image</a>
+                    <a href="">Add PPI Images </a>
                 </li>
                 </ul>
         </div>
@@ -83,7 +87,7 @@
                                           data-bv-feedbackicons-invalid="glyphicon glyphicon-remove"
                                           data-bv-feedbackicons-validating="glyphicon glyphicon-refresh">
                                         <div class="form-title">
-                                            Add PPI Image
+                                            Add PPI 1 Image
                                         </div>
 
                                         <div class="form-group">
@@ -91,6 +95,8 @@
                                             <div class="col-lg-4">
                                                 <input name="logo" id="fileToUpload"
                                                      type="file">
+                                                <input type="hidden" name="type" value="pp1">
+
 
                                             </div>
                                         </div>
@@ -109,8 +115,41 @@
 
                                         </div>
                                     </form>
+                                        <form id="registrationForm" method="post" action="{{ url('/save_logo') }}" accept-charset="utf-8" enctype="multipart/form-data" class="form-horizontal"
+                                              data-bv-message="This value is not valid"
+                                              data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
+                                              data-bv-feedbackicons-invalid="glyphicon glyphicon-remove"
+                                              data-bv-feedbackicons-validating="glyphicon glyphicon-refresh">
+                                            <div class="form-title">
+                                                Add PPI 2 Image
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label class="col-lg-4 control-label">Upload PPI Iamge 1<span style="color: red">*</span></label>
+                                                <div class="col-lg-4">
+                                                    <input name="logo" id="fileToUpload"
+                                                           type="file">
+                                                    <input type="hidden" name="type" value="pp2">
+
+                                                </div>
+                                            </div>
+                                            <!-- <div class="form-group">
+                                               <label class="col-lg-4 control-label">Upload PPI Iamge 2<span style="color: red">*</span></label>
+                                               <div class="col-lg-4">
+                                                   <input name="logo" id="fileToUpload"
+                                                        type="file">
+
+                                               </div>
+                                           </div> -->
+                                            <div class="form-group">
+                                                <div class="col-lg-offset-4 col-lg-8">
+                                                    <input class="btn btn-palegreen" type="submit" value="Upload"/>
+                                                </div>
+
+                                            </div>
+                                        </form>
                                 </div>
-                                </form>
+
 
                             </div>
 
@@ -138,13 +177,16 @@
                                     <thead>
                                     <tr>
                                         <th>
-                                            Sr. No
+                                            SrNo.
                                         </th>
                                         <th>
-                                           PPI Image 1
+                                           Name
+                                        </th>
+                                        <th>
+                                            Image
                                         </th>
                                          <th>
-                                           PPI Image 2
+                                           Type
                                         </th>
                                          <th>
                                             Actions
@@ -152,22 +194,22 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach ($addresses as $address)
+                                    @foreach ($images as $image)
                                     <tr>
                                         <td>
-                                            {{$address->id}}
+                                            <?php echo ++$counter; ?>
                                         </td>
                                         <td>
-                                           <!--  {{$address->address}}   {{$address->city}}  {{$address->state}}  {{$address->country}}  {{$address->postal_code}}
- -->
-                                               <img src="{{URL::to ($address->logo)}}" alt="log" class="img-responsive img-thumbnail"> 
+                                            {{$image->name}}
                                         </td>
                                         <td>
-
-                                            <img src="{{URL::to ($address->logo1)}}" alt="log" class="img-responsive img-thumbnail">
+                                               <img src="{{URL::to ($image->logo)}}" alt="log" class="img-responsive img-thumbnail">
                                         </td>
                                         <td>
-                                            <a href="{{ url('/delete/address/'.$address->id) }}" class="btn btn-danger btn-xs delete"><i
+                                            {{$image->type}}
+                                        </td>
+                                        <td>
+                                            <a href="{{ url('/delete/image/'.$image->id) }}" class="btn btn-danger btn-xs delete"><i
                                                         class="fa fa-trash-o"></i> Delete</a>
                                         </td>
 

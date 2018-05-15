@@ -19,7 +19,7 @@ border-color: transparent;">
                     <i class="fa fa-shopping-cart" style="font-size:90px; color: #f77924; border-color: #f77924;" aria-hidden="true"></i>
                    <!--  <img src="{{ URL::to('/assets/images/black.png')}}" >
  -->                    <div class="caption">
-                        <h3 id="thumbnail-label" style="color: balck;">Help you list items</h3>
+                        <h3 id="thumbnail-label" style= color:black  >Help you list items</h3>
                         <span style="display: inline-block;width: 70px;height: 1px;border-top: 1px solid #bbb;border-bottom: 1px solid;margin: auto;"></span>
                         <p style="color: #555; font-weight: 400; font-size: 15px; font-family: sans-serif;">Cut down the time it takes to list an Amazon item onto eBay from 10-15 minutes to 2-3 minutes.</p>
                         <!-- <a href="#" class="btn btn-success" style="width: 106px;
@@ -89,8 +89,7 @@ height: 35px; background-color:#3b3bc2; border-color: #3b3bc2; font-size: 15px;"
 <div class="container-fluid">
     <div class="row">
     
-    <div class="col-md-6 no-padding" style="padding-right: 0px;
-padding-left: 0px;     max-width: 101%;">
+    <div class="col-md-6 no-padding" style="padding-right: 0px; padding-left: 0px; max-width: 101%; min-height: 511px">
     <img src="{{ URL::to('/assets/images/vector4555.png')}}" class="img-responsive" >
 </div>
 

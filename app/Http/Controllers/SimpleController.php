@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Address;
 use App\FileInfo;
 use App\Files;
+use App\Images;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -22,7 +23,9 @@ class SimpleController extends Controller
     public function getFiles(){
         $addresses = Address::where('user_id',$this->user_id)->get();
         $files = Files::where(['user_id'=> $this->user_id , "type" => "simple"])->orderBy('id', 'desc')->get();
-        return view('panel/simple')->with(compact('files'))->with(compact('addresses'));
+        $images = Images::where('user_id',$this->user_id)->get();
+
+        return view('panel/simple')->with(compact('files'))->with(compact('addresses'))->with(compact('images'));
     }
     public function deleteFile($id)
     {

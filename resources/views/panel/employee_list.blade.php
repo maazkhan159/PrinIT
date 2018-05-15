@@ -1,15 +1,19 @@
 @extends('layouts.panel')
 
 @section('body_content')
+<?php
 
-    <!-- Page Content -->
+$count = 0;
+
+?>
+<!-- Page Content -->
     <div class="page-content">
         <!-- Page Breadcrumb -->
         <div class="page-breadcrumbs">
             <ul class="breadcrumb">
                 <li>
-                    <i class="fa fa-print"></i>
-                    <a href="#">Employees</a>
+                    <i class="fa fa-users"></i>
+                    <a href="#">Customers</a>
                 </li>
 
             </ul>
@@ -18,9 +22,7 @@
         <!-- Page Header -->
         <div class="page-header position-relative">
             <div class="header-title">
-                <h1>
-                    Employees
-                </h1>
+
             </div>
             <!--Header Buttons-->
             <div class="header-buttons">
@@ -60,7 +62,7 @@
                 <div class="col-xs-12 col-md-12">
                     <div class="widget">
                         <div class="widget-header ">
-                            <span class="widget-caption"> Employees List</span>
+                            <span class="widget-caption">Customers List</span>
                             <div class="widget-buttons">
                                 <a href="#" data-toggle="maximize">
                                     <i class="fa fa-expand"></i>
@@ -76,6 +78,7 @@
                             <table class="table table-striped table-bordered table-hover" id="simpledatatable">
                                 <thead>
                                 <tr>
+                                    <th> SrNo.</th>
                                     <th>Name</th>
                                     <th>Email</th>
                                     <th>contact No</th>
@@ -86,6 +89,13 @@
                                 <tbody>
                                 @foreach ($users as $user)
                                     <tr>
+                                        <td>
+                                            <?php
+
+                                            echo ++$count;
+
+                                            ?>
+                                        </td>
                                         <td>{{$user->name}}</td>
                                         <td>{{$user->email}}</td>
                                         <td>{{$user->contact_no}}</td>

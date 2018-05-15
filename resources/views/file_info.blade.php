@@ -85,17 +85,21 @@
                             <p class="baddress">  {{$data['quantity']}} /  {{$data['product_name']}}</p>
                         </div>
                         <div  style="float: left; margin-left: 45px">
-                            <div class="text-center"> 07-05-2018 </div>
+                            <div class="text-center"> <?php echo  date("d-m-y");?> </div>
+                            @if($image)
 
-                            <img src="{{URL::to ($address->logo)}}" alt="logo" class="img-responsive img-thumbnail">
-                            <div class="type text-center">  {{$data['type_of_shipment']}}</div>
+                            <img src="{{URL::to ($image->logo)}}" alt="logo" class="img-responsive img-thumbnail">
+                            @endif
+                                <div class="type text-center">  {{$data['type_of_shipment']}}</div>
                             <div class="code text-center">{{$data['code']}}</div>
                             <div class="return-address text-center">
                                 <strong>If undeliverd,return to:</strong>
+                                @if($address)
                                 <p>
                                     {{$address->address}}   {{$address->city}}  {{$address->state}}  {{$address->country}}  {{$address->postal_code}}
 
                                 </p>
+                                    @endif
 
                             </div>
                             <p>www.haider&maaz.com</p>

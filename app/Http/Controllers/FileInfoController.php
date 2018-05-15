@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Address;
 use App\AmazaonFile;
 use App\EbayFile;
+use App\Images;
 use App\TextFile;
 use App\FileInfo;
 use App\Files;
@@ -24,8 +25,18 @@ class FileInfoController extends Controller
     }
     public function getFileInfo($id, Request $request) {
         $input = $request->all();
-        $address_id = $input['address_id'];
-        $address = Address::where('user_id',$this->user_id)->where('id',$address_id)->first();
+        $address = null;
+        $image = null;
+        if(array_key_exists('address_id' ,$input)) {
+
+            $address_id = $input['address_id'];
+            $address = Address::where('user_id', $this->user_id)->where('id', $address_id)->first();
+        }
+        if(array_key_exists('image_id' ,$input)) {
+            $image_id = $input['image_id'];
+            $image = Images::where('user_id', $this->user_id)->where('id', $image_id)->first();
+        }
+
         $file = Files::where('id',$id)->first();
 
         if($file->type=="simple"){
@@ -126,7 +137,7 @@ $file_info = [];
         }
 
 
-        return view('file_info')->with(compact('file_info'))->with(compact('address'));
+        return view('file_info')->with(compact('file_info'))->with(compact('address'))->with(compact('image'));
     }
 
 }

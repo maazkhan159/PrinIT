@@ -2,6 +2,9 @@
 
 @section('body_content')
 @push('css')
+    <?php
+    $counter = 0;
+    ?>
     <style>
         .img-thumbnail{
             max-width: 150px;
@@ -167,7 +170,7 @@
                                     <thead>
                                     <tr>
                                         <th>
-                                            Sr. No
+                                            SrNo.
                                         </th>
                                         <th>
                                            Return Address
@@ -184,7 +187,7 @@
                                     @foreach ($addresses as $address)
                                     <tr>
                                         <td>
-                                            {{$address->id}}
+                                            <?php echo ++$counter; ?>
                                         </td>
                                         <td>
                                             {{$address->address}}   {{$address->city}}  {{$address->state}}  {{$address->country}}  {{$address->postal_code}}

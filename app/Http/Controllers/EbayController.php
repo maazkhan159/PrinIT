@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Address;
 use App\FileInfo;
 use App\Files;
+use App\Images;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -22,7 +23,8 @@ class EbayController extends Controller
     public function getFiles(){
         $addresses = Address::where('user_id',$this->user_id)->get();
         $files = Files::where(['user_id'=> $this->user_id , "type" => "ebay"])->orderBy('id', 'desc')->get();
-        return view('panel/ebay')->with(compact('files'))->with(compact('addresses'));
+        $images = Images::where('user_id',$this->user_id)->get();
+        return view('panel/ebay')->with(compact('files'))->with(compact('addresses'))->with(compact('images'));
     }
     public function deleteFile($id)
     {
@@ -31,4 +33,7 @@ class EbayController extends Controller
 
         return redirect()->back()->with('status', ' File has been deleted successfully');
     }
+    public function gteImage(){
+
+}
 }

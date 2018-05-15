@@ -1,7 +1,10 @@
 @extends('layouts.panel')
 
 @section('body_content')
+    <?php
+    $counter = 0;
 
+    ?>
     <!-- Page Content -->
         <div class="page-content">
             <!-- Page Breadcrumb -->
@@ -108,9 +111,11 @@
                                 <table class="table table-striped table-bordered table-hover" id="simpledatatable">
                                     <thead>
                                     <tr>
+                                        <th> SrNo.</th>
                                         <th>File Name</th>
-                                        <th>Created At</th>
-                                        <th>Select Address</th>
+                                        <th>Uploaded At</th>
+                                        <th style="width: 170px !important;"> Select Address</th>
+                                        <th style="width: 200px !important;">Select Images</th>
                                         <th>Type</th>
                                         <th>Action</th>
                                     </tr>
@@ -118,13 +123,26 @@
                                     <tbody>
                                     @foreach ($files as $file)
                                         <tr>
+                                            <td>
+                                                <?php echo ++$counter; ?>
+                                            </td>
                                             <td>{{$file->file_name}}</td>
                                             <td>{{$file->created_at->diffForHumans()}}</td>
                                             <td>
                                                 <select class="form-control form-control-sm select-address" style="width:100%;">
+                                                    <option value="null"></option>
                                                     @foreach ($addresses as $address)
                                                     <option value="{{$address->id}}">{{$address->address}}   {{$address->city}}  {{$address->state}}  {{$address->country}}  {{$address->postal_code}}
                                                     </option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+                                            <td>
+                                                <select class="form-control form-control-sm select-image" style="width:100%;">
+                                                    <option value="null"></option>
+                                                    @foreach ($images as $image)
+                                                        <option value="{{$image->id}}">{{$image->name}}
+                                                        </option>
                                                     @endforeach
                                                 </select>
                                             </td>
@@ -161,7 +179,20 @@
                    var parent  = $(this).parent().parent();
 
                    var address_id  = $(parent).find('.select-address option:selected').attr('value')
-                   var delete_url = $(this).attr('href')+"?address_id="+address_id;
+                   var delete_url = $(this).attr('href');
+                   var image_id  = $(parent).find('.select-image option:selected').attr('value')
+                    debugger;
+                   if(address_id && image_id){
+                       delete_url = delete_url+"?address_id="+address_id +"&&image_id="+image_id
+                   }
+                   else if(address_id){
+                       delete_url = delete_url+"?address_id="+address_id;
+                   }
+                   else if(image_id){
+                       delete_url = delete_url+"?image_id="+image_id;
+                   }
+
+
                    $(this).attr('href',delete_url);
 
                })

@@ -10,6 +10,8 @@
         function hideURLbar(){ window.scrollTo(0,1); } </script>
     <!--// Meta tag Keywords -->
     <!-- css files -->
+    <link rel="shortcut icon" href="{{URL::to ('/assets/images/favicon.png')}}" type="image/x-icon">
+
     <link rel="stylesheet" href="{{ URL::to('/assets/css/bootstrap.css') }}"> <!-- Bootstrap-Core-CSS -->
     <link rel="stylesheet" href="{{ URL::to('/assets/css/style.css')}}" type="text/css" media="all" /> <!-- Style-CSS -->
     <link rel="stylesheet" href="{{ URL::to('/assets/css/font-awesome.css')}}"> <!-- Font-Awesome-Icons-CSS -->
@@ -60,6 +62,8 @@
                 <li style="font-size: 15px;font-weight: 600;text-transform: uppercase;font-family: "Raleway", sans-serif;"><a href="{{ url('/pricing') }}">PRICING</a></li>
                 <li style="font-size: 15px;font-weight: 600;text-transform: uppercase;font-family: "Raleway", sans-serif;"><a href="{{ url('/contact') }}">Contact</a></li>
                 @if(Auth::check())
+                    <li style="font-size: 15px;font-weight: 600;text-transform: uppercase;font-family: sans-serif;"><a href="{{ url('/user_dashboard') }}" ><span class="fa fa-dashboard"></span> Dashboard</a></li>
+
                     <li style="font-size: 15px;font-weight: 600;text-transform: uppercase;font-family: sans-serif;"><a href="{{ url('/logout') }}" ><span class="fa fa-sign-out"></span> Log Out</a></li>
 
                 @endif
@@ -210,8 +214,8 @@
                     <div class="clearfix"> </div>
                 </div>
             </div>
-            <div class="col-md-4"></div>
-            <div class="col-md-4  footer-bottom-right">
+
+            <div class="col-md-4  footer-bottom-right" style="padding-left: 106px;">
                 <h5 >We are social</h5>
                 <div class="agileinfo-social-grids">
                     <ul>
@@ -223,6 +227,17 @@
 
                 </div>
             </div>
+            <div class="agileits-footer-bottom-grids">
+                <div class="col-md-4 footer-bottom-left">
+                    <h2>About Us</h2>
+
+
+                    <div class="footer-img-info">
+                        <p>Suspendisse potenti. Pellentesque pulvinar tellus at est ullamcorper, at elementum nibh laoreet. Nunc id diam in nulla sollicitudin auctor. Donec elementum felis turpis, vel interdum libero congue non. Mauris non magna convallis</p>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+            </div>
             <div class="clearfix"> </div>
         </div>
     </div>
@@ -232,8 +247,10 @@
         </div>
     </div>
     </div>
-
 </footer>
+
+
+
 <!-- js-scripts -->
 <!-- js -->
 <script type="text/javascript" src="{{ URL::to('/assets/js/jquery-2.1.4.min.js')}}"></script>

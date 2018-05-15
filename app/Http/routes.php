@@ -29,8 +29,8 @@ Route::group([ 'middleware' => 'auth'], function()
     Route::get('/simple','SimpleController@getFiles');
     Route::post('/save_address','AddressController@saveAddress');
     Route::get('/add_information','AddressController@index');
-     Route::get('/add_image','AddressController@logo');
-     Route::post('/save_logo','AddressController@savelogo');
+    Route::get('/images','ImageController@index');
+    Route::post('/save_logo','ImageController@savelogo');
     Route::get('/delete/address/{id}','AddressController@deleteAddress');
     Route::get('/edit_profile' ,'UserController@index');
     Route::patch('user/edit','UserController@update');
