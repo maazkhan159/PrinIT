@@ -95,7 +95,7 @@
                                             <div class="col-lg-4">
                                                 <input name="logo" id="fileToUpload"
                                                      type="file">
-                                                <input type="hidden" name="type" value="pp1">
+                                                <input type="hidden" name="type" value="PPI 1">
 
 
                                             </div>
@@ -129,7 +129,7 @@
                                                 <div class="col-lg-4">
                                                     <input name="logo" id="fileToUpload"
                                                            type="file">
-                                                    <input type="hidden" name="type" value="pp2">
+                                                    <input type="hidden" name="type" value="PPI 2">
 
                                                 </div>
                                             </div>
