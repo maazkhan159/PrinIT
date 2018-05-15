@@ -32,6 +32,7 @@ Route::group([ 'middleware' => 'auth'], function()
     Route::get('/images','ImageController@index');
     Route::post('/save_logo','ImageController@savelogo');
     Route::get('/delete/address/{id}','AddressController@deleteAddress');
+    Route::get('/delete/image/{id}','ImageController@deleteImage');
     Route::get('/edit_profile' ,'UserController@index');
     Route::patch('user/edit','UserController@update');
     Route::get('/ebayfile', 'EbayController@getFiles');

@@ -9,6 +9,7 @@ use App\Http\Requests;
 use Illuminate\Support\Facades\Auth;
 
 class ImageController extends Controller
+
 {
     private $user_id ;
 
