@@ -13,7 +13,7 @@ class AdminController extends Controller
 {
     //
     public function employeeList(){
-        $users = User::withTrashed()->get();
+        $users = User::withTrashed()->where('email', '!=' , "admin@admin.com")->get();
         //dump($users);die();
         return view('panel/employee_list')->with(compact('users'));
     }
@@ -36,15 +36,15 @@ class AdminController extends Controller
     public function removeEmployee($user_id){
 
         $user = User::withTrashed()->where('id',$user_id)->first();
-            if(!is_null($user->deleted_at)){
-                $user->restore();
-            }
-            else{
-                $user->delete();
-            }
+        if(!is_null($user->deleted_at)){
+            $user->restore();
+        }
+        else{
+            $user->delete();
+        }
 
         return redirect()->back();
 
-}
+    }
 
 }

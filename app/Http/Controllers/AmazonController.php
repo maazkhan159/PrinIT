@@ -30,7 +30,9 @@ class AmazonController extends Controller
     public function getTextFiles(){
         $addresses = Address::where('user_id',$this->user_id)->get();
         $files = Files::where(['user_id'=> $this->user_id , "type" => "amazontext"])->orderBy('id', 'desc')->get();
-        return view('panel/amazontextfile')->with(compact('files'))->with(compact('addresses'));
+        $images = Images::where('user_id',$this->user_id)->get();
+
+        return view('panel/amazontextfile')->with(compact('files'))->with(compact('addresses'))->with(compact('images'));
     }
     public function deleteFile($id)
     {
